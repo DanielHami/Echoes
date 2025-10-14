@@ -1,11 +1,620 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <Layout>
+    <!-- Background (component) added by Aura -->
+    <div class="aura-background-component top-0 w-full h-screen -z-10 absolute">
+      <div data-us-project="hk4GkXoEfSX9qZozoFL6" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+      <script is:inline type="text/javascript">
+        !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.31/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+      </script>
+    </div>
+  
+    <!-- Ambient Particles -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div class="particle absolute w-1 h-1 bg-red-500/40 rounded-full blur-sm" style="left: 10%; top: 20%; --tx: 50px; --ty: -200px; animation-delay: 0s;"></div>
+      <div class="particle absolute w-1.5 h-1.5 bg-purple-500/30 rounded-full blur-sm" style="left: 80%; top: 40%; --tx: -100px; --ty: -300px; animation-delay: 3s;"></div>
+      <div class="particle absolute w-1 h-1 bg-amber-500/30 rounded-full blur-sm" style="left: 30%; top: 60%; --tx: 80px; --ty: -250px; animation-delay: 6s;"></div>
+      <div class="particle absolute w-2 h-2 bg-red-500/20 rounded-full blur-md" style="left: 60%; top: 80%; --tx: -60px; --ty: -180px; animation-delay: 9s;"></div>
+      <div class="particle absolute w-1 h-1 bg-purple-400/40 rounded-full blur-sm" style="left: 90%; top: 15%; --tx: -120px; --ty: -220px; animation-delay: 12s;"></div>
+    </div>
+  
+    <!-- Grain Overlay -->
+    <div class="grain fixed inset-0 pointer-events-none z-10 opacity-40"></div>
+  
+    <!-- Navigation -->
+    <nav class="fixed z-50 top-0 right-0 left-0">
+      <div class="mx-auto max-w-7xl px-6 sm:px-8 pt-3">
+        <div class="flex bg-white/5 border-white/10 border rounded-none pt-4 pr-8 pb-4 pl-8 backdrop-blur-xl items-center justify-between">
+          <div class="text-2xl font-light tracking-widest text-white" style="font-family: 'Playfair Display', serif;">ECHOES</div>
+          <div class="hidden md:flex items-center gap-8 text-sm font-light tracking-wide text-white/80">
+            <a href="#experience" class="transition-colors hover:text-white">Experience</a>
+            <a href="#about" class="transition-colors hover:text-white">About</a>
+            <a href="#gallery" class="transition-colors hover:text-white">Gallery</a>
+            <a href="#price" class="transition-colors hover:text-white">Price</a>
+            <a href="#contact" class="transition-colors hover:text-white">Contact</a>
+          </div>
+          <button id="mobile-menu-btn" class="md:hidden text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden mx-6 sm:mx-8 mt-2 bg-white/5 border-white/10 border backdrop-blur-xl">
+        <div class="flex flex-col p-4 gap-4">
+          <a href="#experience" class="text-sm font-light tracking-wide text-white/80 transition-colors hover:text-white">Experience</a>
+          <a href="#about" class="text-sm font-light tracking-wide text-white/80 transition-colors hover:text-white">About</a>
+          <a href="#gallery" class="text-sm font-light tracking-wide text-white/80 transition-colors hover:text-white">Gallery</a>
+          <a href="#price" class="text-sm font-light tracking-wide text-white/80 transition-colors hover:text-white">Price</a>
+          <a href="#contact" class="text-sm font-light tracking-wide text-white/80 transition-colors hover:text-white">Contact</a>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <!-- Ambient Glow Background -->
+      <div class="absolute top-0 right-0 bottom-0 left-0">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl animate-pulse-glow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 1.5s;"></div>
+      </div>
+      
+      <!-- Background word with bottom dissolve -->
+      <div id="parallax-bg" aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-36 flex justify-center text-6xl sm:text-8xl lg:text-9xl font-semibold tracking-tight text-white/5 select-none transition-transform duration-0" style="mask-image: linear-gradient(rgb(0, 0, 0) 65%, rgba(0, 0, 0, 0) 100%); will-change: transform;">
+        CREATIVE
+      </div>
+      
+      <div id="hero-content" class="relative z-10 text-center px-6 py-32 transition-all duration-0">
+        <!-- Spacer to preserve original hero spacing after removing portrait -->
+        <div class="mb-12 h-[22rem] sm:h-80 md:h-96"></div>
+  
+        <!-- Hero Text -->
+        <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light tracking-tight text-white mb-6 text-outline animate-in delay-200" style="font-family: 'Playfair Display', serif;">ECHOES</h1>
+        <p class="text-base sm:text-lg md:text-xl font-extralight tracking-wide text-neutral-300 max-w-2xl mx-auto mb-12 leading-relaxed animate-in delay-300">
+          A visual journey through rhythm, silence, and emotion.
+        </p>
+  
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in delay-400">
+          <a href="#experience" class="group inline-flex items-center gap-3 transition-all hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/50 font-light text-white tracking-wide bg-red-600 px-8 py-4 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+            Experience Now
+          </a>
+          <a href="#about" class="inline-flex items-center gap-3 px-8 py-4 border border-white/20 text-white font-light tracking-wide backdrop-blur-sm transition-all hover:bg-white/5 hover:border-white/40">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg>
+            About the Project
+          </a>
+        </div>
+  
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 animate-bounce animate-in delay-500">
+          <span class="text-xs font-light tracking-widest">SCROLL</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m7-7-7 7-7-7"></path></svg>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Visual Album Section -->
+    <section class="sm:px-8 pt-32 pr-6 pb-32 pl-6 relative" id="experience">
+      <div class="mx-auto max-w-7xl">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-4 animate-in" style="font-family: 'Playfair Display', serif;">Visual Album</h2>
+          <p class="text-sm sm:text-base font-extralight tracking-wide text-neutral-400 animate-in delay-100">Chapters of sound translated into motion</p>
+        </div>
+  
+        <div class="space-y-8">
+          <!-- Track 1 -->
+          <div class="group relative overflow-hidden bg-gradient-to-br from-red-950/20 to-transparent border border-red-500/10 backdrop-blur-sm transition-all hover:border-red-500/30 animate-in">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+              <div class="lg:col-span-5 aspect-video lg:aspect-square overflow-hidden">
+                <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/0db5b9f1-ec3e-4f81-a9dd-299db35d3aa6_3840w.jpg" alt="Crimson Pulse" class="transition duration-700 group-hover:scale-105 w-full h-full object-cover">
+              </div>
+              <div class="lg:col-span-7 p-8 lg:p-12">
+                <div class="flex items-center gap-4 mb-6">
+                  <span class="text-5xl font-extralight text-red-500/60">01</span>
+                  <div class="h-px flex-1 bg-gradient-to-r from-red-500/40 to-transparent"></div>
+                </div>
+                <h3 class="text-3xl sm:text-4xl font-light tracking-tight text-white mb-4" style="font-family: 'Playfair Display', serif;">Crimson Pulse</h3>
+                <p class="text-sm font-light text-neutral-400 mb-8 leading-relaxed italic">"The heartbeat of desire, painted in red."</p>
+                <button class="play-btn group/btn inline-flex items-center gap-3 px-6 py-3 border border-red-500/30 text-red-400 font-light tracking-wide transition-all hover:bg-red-500/10 hover:border-red-500/50">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  Play Experience
+                </button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Track 2 -->
+          <div class="group relative overflow-hidden bg-gradient-to-br from-purple-950/20 to-transparent border border-purple-500/10 backdrop-blur-sm transition-all hover:border-purple-500/30 animate-in delay-100">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+              <div class="lg:col-span-7 p-8 lg:p-12 order-2 lg:order-1">
+                <div class="flex items-center gap-4 mb-6">
+                  <span class="text-5xl font-extralight text-purple-500/60">02</span>
+                  <div class="h-px flex-1 bg-gradient-to-r from-purple-500/40 to-transparent"></div>
+                </div>
+                <h3 class="text-3xl sm:text-4xl font-light tracking-tight text-white mb-4" style="font-family: 'Playfair Display', serif;">Reflections in Glass</h3>
+                <p class="text-sm font-light text-neutral-400 mb-8 leading-relaxed italic">"Fragments of memory caught between light and shadow."</p>
+                <button class="play-btn group/btn inline-flex items-center gap-3 px-6 py-3 border border-purple-500/30 text-purple-400 font-light tracking-wide transition-all hover:bg-purple-500/10 hover:border-purple-500/50">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  Play Experience
+                </button>
+              </div>
+              <div class="lg:col-span-5 aspect-video lg:aspect-square overflow-hidden order-1 lg:order-2">
+                <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/ada23122-88a0-4549-a816-aa0d985efcbf_1600w.webp" alt="Reflections" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+              </div>
+            </div>
+          </div>
+  
+          <!-- Track 3 -->
+          <div class="group relative overflow-hidden bg-gradient-to-br from-amber-950/20 to-transparent border border-amber-500/10 backdrop-blur-sm transition-all hover:border-amber-500/30 animate-in delay-200">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+              <div class="lg:col-span-5 aspect-video lg:aspect-square overflow-hidden">
+                <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/4b769dcd-6824-405e-9468-9e9de7c75d81_1600w.jpg" alt="Falling Light" class="transition duration-700 group-hover:scale-105 w-full h-full object-cover">
+              </div>
+              <div class="lg:col-span-7 p-8 lg:p-12">
+                <div class="flex items-center gap-4 mb-6">
+                  <span class="text-5xl font-extralight text-amber-500/60">03</span>
+                  <div class="h-px flex-1 bg-gradient-to-r from-amber-500/40 to-transparent"></div>
+                </div>
+                <h3 class="text-3xl sm:text-4xl font-light tracking-tight text-white mb-4" style="font-family: 'Playfair Display', serif;">Falling Light</h3>
+                <p class="text-sm font-light text-neutral-400 mb-8 leading-relaxed italic">"Grace descends in golden silence."</p>
+                <button class="play-btn group/btn inline-flex items-center gap-3 px-6 py-3 border border-amber-500/30 text-amber-400 font-light tracking-wide transition-all hover:bg-amber-500/10 hover:border-amber-500/50">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  Play Experience
+                </button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Track 4 -->
+          <div class="group relative overflow-hidden bg-gradient-to-br from-red-950/20 to-transparent border border-red-500/10 backdrop-blur-sm transition-all hover:border-red-500/30 animate-in delay-300">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+              <div class="lg:col-span-7 lg:p-12 order-2 lg:order-1 pt-8 pr-8 pb-8 pl-8">
+                <div class="flex items-center gap-4 mb-6">
+                  <span class="text-5xl font-extralight text-pink-500/60">04</span>
+                  <div class="h-px flex-1 bg-gradient-to-r from-pink-500/40 to-transparent"></div>
+                </div>
+                <h3 class="text-3xl sm:text-4xl font-light tracking-tight text-white mb-4" style="font-family: 'Playfair Display', serif;">Echoes of You</h3>
+                <p class="text-sm font-light text-neutral-400 mb-8 leading-relaxed italic">"Reverberations of presence long after the sound has faded."</p>
+                <button class="play-btn group/btn inline-flex gap-3 transition-all hover:bg-red-500/10 hover:border-pink-500/50 font-light text-pink-400 tracking-wide border-pink-400/30 border px-6 py-3 gap-x-3 gap-y-3 items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  Play Experience
+                </button>
+              </div>
+              <div class="lg:col-span-5 aspect-video lg:aspect-square overflow-hidden order-1 lg:order-2">
+                <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/0415ae4b-2c65-41d6-92b9-3b67dc5d66ab_1600w.jpg" alt="Echoes" class="transition duration-700 group-hover:scale-105 w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- About Section -->
+    <section class="sm:px-8 bg-gradient-to-b from-transparent via-red-950/5 to-transparent pt-32 pr-6 pb-32 pl-6 relative" id="about">
+      <div class="text-center max-w-4xl mr-auto ml-auto">
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-8 animate-in" style="font-family: 'Playfair Display', serif;">Beyond Sound</h2>
+        <div class="h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent w-[41rem] mr-auto mb-12 ml-auto animate-in delay-100"></div>
+        <p class="text-base sm:text-lg font-light leading-relaxed text-neutral-300 mb-8 animate-in delay-200">
+          ECHOES is more than sound. It's a fusion of 3D design, color, and rhythm — turning feelings into visual stories.
+        </p>
+        <p class="sm:text-base leading-relaxed text-sm text-neutral-400 font-extralight animate-in delay-300">Each piece begins with a feeling. A rhythm. A moment suspended in time. Through careful composition of light, texture, and motion, I translate sonic experiences into visual narratives that breathe and pulse with their own life. This is where emotion becomes tangible where you can see what you feel when the music plays.</p>
+      </div>
+    </section>
+  
+    <!-- Gallery Section -->
+    <section id="gallery" class="relative py-32 px-6 sm:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-4 animate-in" style="font-family: 'Playfair Display', serif;">Gallery</h2>
+          <p class="text-sm sm:text-base font-extralight tracking-wide text-neutral-400 mb-8 animate-in delay-100">Cinematic stills from the visual universe</p>
+          
+          <!-- Filters -->
+          <div class="flex flex-wrap items-center justify-center gap-3 animate-in delay-200">
+            <button class="filter-btn active px-4 py-2 text-xs font-light tracking-wide bg-white/10 text-white border border-white/20 backdrop-blur-sm transition hover:bg-white/20" data-filter="all">All</button>
+            <button class="filter-btn px-4 py-2 text-xs font-light tracking-wide text-neutral-400 border border-white/10 backdrop-blur-sm transition hover:text-white hover:border-white/20" data-filter="3d">3D</button>
+            <button class="filter-btn px-4 py-2 text-xs font-light tracking-wide text-neutral-400 border border-white/10 backdrop-blur-sm transition hover:text-white hover:border-white/20" data-filter="concept">Concept</button>
+            <button class="filter-btn px-4 py-2 text-xs font-light tracking-wide text-neutral-400 border border-white/10 backdrop-blur-sm transition hover:text-white hover:border-white/20" data-filter="sound">Sound Visuals</button>
+            <button class="filter-btn px-4 py-2 text-xs font-light tracking-wide text-neutral-400 border border-white/10 backdrop-blur-sm transition hover:text-white hover:border-white/20" data-filter="storyboard">Storyboards</button>
+          </div>
+        </div>
+  
+        <!-- Gallery Grid -->
+        <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="gallery-item group relative aspect-square overflow-hidden bg-neutral-900 border border-white/5 transition hover:border-red-500/30 animate-in delay-100" data-category="3d">
+            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/0600d42f-8b5f-433f-a705-67543465aac1_1600w.jpg" alt="Gallery" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+              <button class="view-btn text-white text-sm font-light tracking-wide">View</button>
+            </div>
+          </div>
+          <div class="gallery-item group relative aspect-square overflow-hidden bg-neutral-900 border border-white/5 transition hover:border-purple-500/30 animate-in delay-200" data-category="concept">
+            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/b2b6cef4-678b-4d54-ab64-a5411f5d271f_3840w.jpg" alt="Gallery" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+              <button class="view-btn text-white text-sm font-light tracking-wide">View</button>
+            </div>
+          </div>
+          <div class="gallery-item group relative aspect-square overflow-hidden bg-neutral-900 border border-white/5 transition hover:border-amber-500/30 animate-in delay-300" data-category="sound">
+            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/4141a0d4-ecd9-4d81-a70e-58a82a928cd6_1600w.jpg" alt="Gallery" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+              <button class="view-btn text-white text-sm font-light tracking-wide">View</button>
+            </div>
+          </div>
+          <div class="gallery-item group relative aspect-square overflow-hidden bg-neutral-900 border border-white/5 transition hover:border-red-500/30 animate-in delay-400" data-category="3d">
+            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/2f5581f8-0e22-4d5e-bf09-49852ba18367_1600w.webp" alt="Gallery" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+              <button class="view-btn text-white text-sm font-light tracking-wide">View</button>
+            </div>
+          </div>
+          <div class="gallery-item group relative aspect-square overflow-hidden bg-neutral-900 border border-white/5 transition hover:border-purple-500/30 animate-in delay-500" data-category="storyboard">
+            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/28815bdd-f673-46c3-80b4-05cbb3bbbc33_1600w.jpg" alt="Gallery" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            <div class="group-hover:opacity-100 transition-opacity duration-300 flex bg-gradient-to-t from-black/60 to-transparent opacity-0 pb-6 absolute top-0 right-0 bottom-0 left-0 items-end justify-center">
+              <button class="view-btn text-white text-sm font-light tracking-wide">View</button>
+            </div>
+          </div>
+          <div class="gallery-item group relative aspect-square overflow-hidden bg-neutral-900 border border-white/5 transition hover:border-red-500/30 animate-in delay-600" data-category="sound">
+            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/b0a2dab0-f8ec-483b-adec-e6c23c38aa9c_1600w.jpg" alt="Gallery" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+              <button class="view-btn text-white text-sm font-light tracking-wide">View</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Pricing Section -->
+  <section id="price" class="relative py-32 px-6 sm:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="text-center mb-10">
+        <h2 class="text-4xl sm:text-5xl font-light tracking-tight text-white" style="font-family: 'Playfair Display', serif;">Pricing</h2>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+        <!-- Starter -->
+        <article class="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-neutral-900/70 to-neutral-950/80 backdrop-blur-xl p-5 sm:p-6">
+          <div class="flex items-center justify-between text-xs">
+            <div class="inline-flex items-center gap-2 text-white/60">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-950/80 ring-1 ring-white/10 text-white/80">01</span>
+              <span class="">Starter</span>
+            </div>
+            
+          </div>
+
+
+          <div class="mt-4">
+            <h3 class="text-2xl font-medium tracking-tight">Starter</h3>
+            <p class="text-sm text-white/60 mt-1">For individuals and side projects.</p>
+            <div class="mt-5 flex items-baseline gap-1">
+              <span class="text-3xl font-medium tracking-tight" data-price="" data-monthly="29" data-yearly="23">$23</span>
+              <span class="text-sm text-white/50">/mo</span>
+            </div>
+            <p class="text-xs text-white/40" data-billed-note="" data-monthly-note="Billed monthly" data-yearly-note="Billed yearly ($276)">Billed yearly ($276)</p>
+            <button class="mt-5 inline-flex items-center justify-center gap-2 h-11 w-full rounded-full bg-white/90 text-neutral-900 text-sm font-normal hover:bg-white transition">
+              Get Started
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right w-4 h-4"><path d="M7 7h10v10" class=""></path><path d="M7 17 17 7" class=""></path></svg>
+            </button>
+          </div>
+
+
+          <div class="mt-6">
+            <p class="text-xs text-white/60">Includes:</p>
+            <ul class="mt-3 space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-white/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">Up to 5 projects</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-white/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">10GB storage</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-white/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">Community support</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- Team (Most popular) -->
+        <article class="relative overflow-hidden rounded-2xl border border-white/20 bg-gradient-to-b from-neutral-900/80 to-neutral-950/90 backdrop-blur-xl p-5 sm:p-6 shadow-[0_2px_10px_rgba(0,0,0,0.25)]">
+          <div class="absolute right-4 top-4">
+            <span class="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[10px] border border-indigo-400/30" style="background: rgba(99,102,241,0.12); color: rgb(165,180,252);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" class="lucide lucide-sparkles w-3.5 h-3.5"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" class=""></path><path d="M20 2v4" class=""></path><path d="M22 4h-4" class=""></path><circle cx="4" cy="20" r="2" class=""></circle></svg>
+              Most popular
+            </span>
+          </div>
+          <div class="flex items-center justify-between text-xs">
+            <div class="inline-flex items-center gap-2 text-white/60">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-950/80 ring-1 ring-indigo-500/20 text-white/80">02</span>
+              <span>Team</span>
+            </div>
+            
+          </div>
+
+
+          <div class="mt-4">
+            <h3 class="text-2xl font-medium tracking-tight">Team</h3>
+            <p class="text-sm text-white/60 mt-1">For growing teams shipping weekly.</p>
+            <div class="mt-5 flex items-baseline gap-1">
+              <span class="text-3xl font-medium tracking-tight" data-price="" data-monthly="79" data-yearly="63">$63</span>
+              <span class="text-sm text-white/50">/mo</span>
+            </div>
+            <p class="text-xs text-white/40" data-billed-note="" data-monthly-note="Billed monthly" data-yearly-note="Billed yearly ($756)">Billed yearly ($756)</p>
+            <button class="mt-5 inline-flex items-center justify-center gap-2 h-11 w-full rounded-full bg-white/90 text-neutral-900 text-sm font-normal hover:bg-white transition">
+              Start Team
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="zap" class="lucide lucide-zap w-4 h-4"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" class=""></path></svg>
+            </button>
+          </div>
+
+
+          <div class="mt-6">
+            <p class="text-xs text-white/60">Everything in Starter, plus:</p>
+            <ul class="mt-3 space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-indigo-500/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">Unlimited projects &amp; collaborators</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-indigo-500/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">100GB storage on global edge</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-indigo-500/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">Priority email &amp; live chat</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- Business -->
+        <article class="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-neutral-900/70 to-neutral-950/80 backdrop-blur-xl p-5 sm:p-6">
+          <div class="flex items-center justify-between text-xs">
+            <div class="inline-flex items-center gap-2 text-white/60">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-950/80 ring-1 ring-white/10 text-white/80">03</span>
+              <span class="">Business</span>
+            </div>
+            
+          </div>
+
+
+          <div class="mt-4">
+            <h3 class="text-2xl font-medium tracking-tight">Business</h3>
+            <p class="text-sm text-white/60 mt-1">For fast‑moving orgs with scale.</p>
+            <div class="mt-5 flex items-baseline gap-1">
+              <span class="text-3xl font-medium tracking-tight" data-price="" data-monthly="199" data-yearly="159">$159</span>
+              <span class="text-sm text-white/50">/mo</span>
+            </div>
+            <p class="text-xs text-white/40" data-billed-note="" data-monthly-note="Billed monthly" data-yearly-note="Billed yearly ($1,908)">Billed yearly ($1,908)</p>
+            <button class="mt-5 inline-flex items-center justify-center gap-2 h-11 w-full rounded-full bg-white/90 text-neutral-900 text-sm font-normal hover:bg-white transition">
+              Start Business
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="rocket" class="lucide lucide-rocket w-4 h-4"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" class=""></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" class=""></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" class=""></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" class=""></path></svg>
+            </button>
+          </div>
+
+
+          <div class="mt-6">
+            <p class="text-xs text-white/60">Everything in Team, plus:</p>
+            <ul class="mt-3 space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-white/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">Advanced access controls &amp; roles</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-white/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">Custom environments &amp; approvals</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-white/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">Analytics &amp; audit exports</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+
+        <!-- Enterprise -->
+        <article class="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-neutral-900/70 to-neutral-950/80 backdrop-blur-xl p-5 sm:p-6">
+          <div class="flex items-center justify-between text-xs">
+            <div class="inline-flex items-center gap-2 text-white/60">
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-neutral-950/80 ring-1 ring-white/10 text-white/80">04</span>
+              <span class="">Enterprise</span>
+            </div>
+            
+          </div>
+
+
+          <div class="mt-4">
+            <h3 class="text-2xl font-medium tracking-tight">Enterprise</h3>
+            <p class="text-sm text-white/60 mt-1">Security, scale, and support.</p>
+            <div class="mt-5 flex items-baseline gap-1">
+              <span class="text-3xl font-medium tracking-tight">Custom</span>
+            </div>
+            <p class="text-xs text-white/40">Let’s design a plan for your needs</p>
+            <button class="mt-5 inline-flex items-center justify-center gap-2 h-11 w-full rounded-full bg-white/20 text-white text-sm font-normal hover:bg-white/30 transition border border-white/20">
+              Contact Sales
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="messages-square" class="lucide lucide-messages-square w-4 h-4"><path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" class=""></path><path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1" class=""></path></svg>
+            </button>
+          </div>
+
+
+          <div class="mt-6">
+            <p class="text-xs text-white/60">Everything in Business, plus:</p>
+            <ul class="mt-3 space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-white/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">SSO/SAML, SCIM &amp; audit trails</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-white/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">Dedicated infrastructure &amp; 99.9% SLA</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 h-5 w-5 rounded-full bg-neutral-900/70 border border-white/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 text-emerald-400"><path d="M20 6 9 17l-5-5" class=""></path></svg>
+                </span>
+                <span class="text-sm text-white/80">24/7 phone support &amp; CSM</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+    <section id="contact" class="relative py-32 px-6 sm:px-8">
+      <div class="mx-auto max-w-3xl">
+        <div class="overflow-hidden sm:p-16 bg-gradient-to-br from-red-950/10 via-black to-purple-950/20 border-red-500/20 border pt-12 pr-12 pb-12 pl-12 relative backdrop-blur-xl animate-in">
+          <!-- Corner glow accents -->
+          <div class="absolute -top-20 -left-20 w-40 h-40 bg-red-600/30 rounded-full blur-3xl"></div>
+          <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-purple-600/30 rounded-full blur-3xl"></div>
+          
+          <div class="relative text-center">
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-6" style="font-family: 'Playfair Display', serif;">Let's Create</h2>
+            <p class="text-base sm:text-lg font-light text-neutral-300 mb-12">Your sound in motion.</p>
+            
+            <a href="mailto:hello@echoes.studio" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-light tracking-wide transition-all hover:bg-neutral-200 hover:shadow-lg hover:shadow-white/20">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer class="relative py-16 px-6 sm:px-8 border-t border-white/5 animate-in">
+      <div class="mx-auto max-w-7xl text-center">
+        <div class="text-2xl font-light tracking-widest text-white/60 mb-4" style="font-family: 'Playfair Display', serif;">ECHOES</div>
+        <p class="text-xs font-light tracking-widest text-neutral-600">© 2025 ECHOES — Crafted by Your Name</p>
+      </div>
+    </footer>
+  
+    <!-- External scripts -->
+    <script src="https://unpkg.com/lucide@latest" is:inline></script>
+  
+    <!-- Page script -->
+    <script is:inline>
+      // Initialize Lucide icons
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      } else {
+        window.addEventListener('load', () => {
+          if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+          }
+        });
+      }
+  
+      // Intersection Observer for scroll animations
+      const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+      }, observerOptions);
+      document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+  
+      // Trigger hero animations immediately
+      setTimeout(() => {
+        document.querySelectorAll('#hero-content .animate-in').forEach(el => el.classList.add('visible'));
+      }, 100);
+  
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+      }
+  
+      // Parallax effect on scroll
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const parallaxBg = document.getElementById('parallax-bg');
+        const heroContent = document.getElementById('hero-content');
+        const portraitImg = document.getElementById('portrait-img');
+        if (parallaxBg) { parallaxBg.style.transform = `translateY(${scrollY * 0.3}px)`; }
+        if (heroContent && portraitImg) {
+          const blurAmount = Math.min(scrollY / 50, 10);
+          const opacity = Math.max(1 - (scrollY / 500), 0);
+          portraitImg.style.filter = `blur(${blurAmount}px)`;
+          heroContent.style.opacity = String(opacity);
+        }
+      });
+  
+      // Gallery Filter
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+          filterBtns.forEach(b => { b.classList.remove('active', 'bg-white/10', 'text-white', 'border-white/20'); b.classList.add('text-neutral-400', 'border-white/10'); });
+          btn.classList.add('active', 'bg-white/10', 'text-white', 'border-white/20');
+          btn.classList.remove('text-neutral-400', 'border-white/10');
+          galleryItems.forEach(item => {
+            if (filter === 'all' || item.dataset.category === filter) {
+              item.style.display = 'block';
+              setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 10);
+            } else {
+              item.style.opacity = '0';
+              item.style.transform = 'scale(0.9)';
+              setTimeout(() => { item.style.display = 'none'; }, 300);
+            }
+          });
+        });
+      });
+  
+      // Play buttons
+      document.querySelectorAll('.play-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const h3 = btn.closest('.group')?.querySelector('h3');
+          const trackName = h3 ? h3.textContent : 'Track';
+          alert(`Playing: ${trackName}\n\nThis would launch an immersive visual experience.`);
+        });
+      });
+  
+      // View buttons in gallery
+      document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.addEventListener('click', () => { alert('This would open the image in a lightbox viewer.'); });
+      });
+  
+      // Smooth scroll offset for fixed nav
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (!href) return;
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            const offset = 100;
+            const targetPosition = target.offsetTop - offset;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
 </Layout>
