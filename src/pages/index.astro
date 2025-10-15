@@ -30,11 +30,11 @@ import Layout from '../layouts/Layout.astro';
         <div class="flex bg-white/5 border-white/10 border rounded-none pt-4 pr-8 pb-4 pl-8 backdrop-blur-xl items-center justify-between">
           <div class="text-2xl font-light tracking-widest text-white" style="font-family: 'Playfair Display', serif;">ECHOES</div>
           <div class="hidden md:flex items-center gap-8 text-sm font-light tracking-wide text-white/80">
-            <a href="#experience" class="transition-colors hover:text-white">Experience</a>
-            <a href="#about" class="transition-colors hover:text-white">About</a>
-            <a href="#gallery" class="transition-colors hover:text-white">Gallery</a>
-            <a href="#price" class="transition-colors hover:text-white">Price</a>
-            <a href="#contact" class="transition-colors hover:text-white">Contact</a>
+            <a href="#experience" class="transition-colors hover:text-white">Skúsenosti</a>
+            <a href="#about" class="transition-colors hover:text-white">O nás</a>
+            <a href="#gallery" class="transition-colors hover:text-white">Galéria</a>
+            <a href="#price" class="transition-colors hover:text-white">Cenník</a>
+            <a href="#contact" class="transition-colors hover:text-white">Kontakt</a>
           </div>
           <button id="mobile-menu-btn" class="md:hidden text-white">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -42,16 +42,16 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
       
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden mx-6 sm:mx-8 mt-2 bg-white/5 border-white/10 border backdrop-blur-xl">
+      <div id="offcanvas-backdrop" class="offcanvas-backdrop"></div>
+      <aside id="mobile-menu" class="offcanvas-panel md:hidden" aria-hidden="true">
         <div class="flex flex-col p-4 gap-4">
-          <a href="#experience" class="text-sm font-light tracking-wide text-white/80 transition-colors hover:text-white">Experience</a>
-          <a href="#about" class="text-sm font-light tracking-wide text-white/80 transition-colors hover:text-white">About</a>
-          <a href="#gallery" class="text-sm font-light tracking-wide text-white/80 transition-colors hover:text-white">Gallery</a>
-          <a href="#price" class="text-sm font-light tracking-wide text-white/80 transition-colors hover:text-white">Price</a>
-          <a href="#contact" class="text-sm font-light tracking-wide text-white/80 transition-colors hover:text-white">Contact</a>
+          <a href="#experience" class="text-sm font-light tracking-wide text-white/90 transition-colors hover:text-white">Experience</a>
+          <a href="#about" class="text-sm font-light tracking-wide text-white/90 transition-colors hover:text-white">About</a>
+          <a href="#gallery" class="text-sm font-light tracking-wide text-white/90 transition-colors hover:text-white">Gallery</a>
+          <a href="#price" class="text-sm font-light tracking-wide text-white/90 transition-colors hover:text-white">Price</a>
+          <a href="#contact" class="text-sm font-light tracking-wide text-white/90 transition-colors hover:text-white">Contact</a>
         </div>
-      </div>
+      </aside>
     </nav>
   
     <!-- Hero Section -->
@@ -64,7 +64,7 @@ import Layout from '../layouts/Layout.astro';
       
       <!-- Background word with bottom dissolve -->
       <div id="parallax-bg" aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-36 flex justify-center text-6xl sm:text-8xl lg:text-9xl font-semibold tracking-tight text-white/5 select-none transition-transform duration-0" style="mask-image: linear-gradient(rgb(0, 0, 0) 65%, rgba(0, 0, 0, 0) 100%); will-change: transform;">
-        CREATIVE
+        SPOMÍNANIA
       </div>
       
       <div id="hero-content" class="relative z-10 text-center px-6 py-32 transition-all duration-0">
@@ -74,24 +74,24 @@ import Layout from '../layouts/Layout.astro';
         <!-- Hero Text -->
         <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light tracking-tight text-white mb-6 text-outline animate-in delay-200" style="font-family: 'Playfair Display', serif;">ECHOES</h1>
         <p class="text-base sm:text-lg md:text-xl font-extralight tracking-wide text-neutral-300 max-w-2xl mx-auto mb-12 leading-relaxed animate-in delay-300">
-          A visual journey through rhythm, silence, and emotion.
+          Počuj tých, ktorí chýbajú. Uvidíš lásku, na ktorú nezabúdaš
         </p>
   
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in delay-400">
           <a href="#experience" class="group inline-flex items-center gap-3 transition-all hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/50 font-light text-white tracking-wide bg-red-600 px-8 py-4 relative">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-            Experience Now
+            Ukážky projektu
           </a>
           <a href="#about" class="inline-flex items-center gap-3 px-8 py-4 border border-white/20 text-white font-light tracking-wide backdrop-blur-sm transition-all hover:bg-white/5 hover:border-white/40">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg>
-            About the Project
+            Ako to funguje
           </a>
         </div>
   
         <!-- Scroll Indicator -->
         <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 animate-bounce animate-in delay-500">
-          <span class="text-xs font-light tracking-widest">SCROLL</span>
+          <span class="text-xs font-light tracking-widest">ROLOVA</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m7-7-7 7-7-7"></path></svg>
         </div>
       </div>
@@ -196,12 +196,13 @@ import Layout from '../layouts/Layout.astro';
     <!-- About Section -->
     <section class="sm:px-8 bg-gradient-to-b from-transparent via-red-950/5 to-transparent pt-32 pr-6 pb-32 pl-6 relative" id="about">
       <div class="text-center max-w-4xl mr-auto ml-auto">
-        <h2 class="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-8 animate-in" style="font-family: 'Playfair Display', serif;">Beyond Sound</h2>
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-8 animate-in" style="font-family: 'Playfair Display', serif;">Nad spomienkou</h2>
         <div class="h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent w-[41rem] mr-auto mb-12 ml-auto animate-in delay-100"></div>
         <p class="text-base sm:text-lg font-light leading-relaxed text-neutral-300 mb-8 animate-in delay-200">
-          ECHOES is more than sound. It's a fusion of 3D design, color, and rhythm — turning feelings into visual stories.
+          Vďaka AI sa 10‑sekundová nahrávka a jedna fotografia menia na jemnú audiovizuálnu spomienku
         </p>
-        <p class="sm:text-base leading-relaxed text-sm text-neutral-400 font-extralight animate-in delay-300">Each piece begins with a feeling. A rhythm. A moment suspended in time. Through careful composition of light, texture, and motion, I translate sonic experiences into visual narratives that breathe and pulse with their own life. This is where emotion becomes tangible where you can see what you feel when the music plays.</p>
+        <p class="sm:text-base leading-relaxed text-sm text-neutral-400 font-extralight animate-in delay-300">Zo zlomku hlasu a obrazu citlivo oživujeme prítomnosť bez napodobňovania života tiché miesto, kde ich môžeš znovu počuť aj vidieť.﻿
+          Pošli jednu fotografiu a krátku nahrávku a vytvoríme úctivý, filmový okamih, ku ktorému sa môžeš vracať.</p>
       </div>
     </section>
   
@@ -209,8 +210,8 @@ import Layout from '../layouts/Layout.astro';
     <section id="gallery" class="relative py-32 px-6 sm:px-8">
       <div class="mx-auto max-w-7xl">
         <div class="text-center mb-16">
-          <h2 class="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-4 animate-in" style="font-family: 'Playfair Display', serif;">Gallery</h2>
-          <p class="text-sm sm:text-base font-extralight tracking-wide text-neutral-400 mb-8 animate-in delay-100">Cinematic stills from the visual universe</p>
+          <h2 class="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-4 animate-in" style="font-family: 'Playfair Display', serif;">Galéria</h2>
+          <p class="text-sm sm:text-base font-extralight tracking-wide text-neutral-400 mb-8 animate-in delay-100">Filmové zábery z vizuálneho vesmíru</p>
           
           <!-- Filters -->
           <div class="flex flex-wrap items-center justify-center gap-3 animate-in delay-200">
@@ -268,7 +269,7 @@ import Layout from '../layouts/Layout.astro';
   <section id="price" class="relative py-32 px-6 sm:px-8">
     <div class="mx-auto max-w-7xl">
       <div class="text-center mb-10">
-        <h2 class="text-4xl sm:text-5xl font-light tracking-tight text-white" style="font-family: 'Playfair Display', serif;">Pricing</h2>
+        <h2 class="text-4xl sm:text-5xl font-light tracking-tight text-white" style="font-family: 'Playfair Display', serif;">Cenník</h2>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
         <!-- Starter -->
@@ -495,12 +496,12 @@ import Layout from '../layouts/Layout.astro';
           <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-purple-600/30 rounded-full blur-3xl"></div>
           
           <div class="relative text-center">
-            <h2 class="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-6" style="font-family: 'Playfair Display', serif;">Let's Create</h2>
-            <p class="text-base sm:text-lg font-light text-neutral-300 mb-12">Your sound in motion.</p>
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-light tracking-tight text-white mb-6" style="font-family: 'Playfair Display', serif;">Poďme tvoriť﻿​</h2>
+            <p class="text-base sm:text-lg font-light text-neutral-300 mb-12">Tvoj zvuk v pohybe</p>
             
             <a href="mailto:hello@echoes.studio" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-light tracking-wide transition-all hover:bg-neutral-200 hover:shadow-lg hover:shadow-white/20">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-              Get in Touch
+              Kontaktuj nás﻿​
             </a>
           </div>
         </div>
@@ -511,7 +512,7 @@ import Layout from '../layouts/Layout.astro';
     <footer class="relative py-16 px-6 sm:px-8 border-t border-white/5 animate-in">
       <div class="mx-auto max-w-7xl text-center">
         <div class="text-2xl font-light tracking-widest text-white/60 mb-4" style="font-family: 'Playfair Display', serif;">ECHOES</div>
-        <p class="text-xs font-light tracking-widest text-neutral-600">© 2025 ECHOES — Crafted by Your Name</p>
+        <p class="text-xs font-light tracking-widest text-neutral-600">© 2025 ECHOES — Crafted by Daniel Hami</p>
       </div>
     </footer>
   
@@ -543,12 +544,34 @@ import Layout from '../layouts/Layout.astro';
         document.querySelectorAll('#hero-content .animate-in').forEach(el => el.classList.add('visible'));
       }, 100);
   
-      // Mobile Menu Toggle
+      // Off-canvas Mobile Menu Toggle with scroll lock
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
-      if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+      const offcanvasBackdrop = document.getElementById('offcanvas-backdrop');
+      let __scrollY = 0;
+      function openOffcanvas() {
+        __scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+        document.documentElement.classList.add('offcanvas-open');
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${__scrollY}px`;
+        document.body.style.width = '100%';
+        mobileMenu.setAttribute('aria-hidden', 'false');
+      }
+      function closeOffcanvas() {
+        document.documentElement.classList.remove('offcanvas-open');
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        window.scrollTo(0, __scrollY);
+      }
+      if (mobileMenuBtn && mobileMenu && offcanvasBackdrop) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isOpen = document.documentElement.classList.contains('offcanvas-open');
+          if (isOpen) { closeOffcanvas(); } else { openOffcanvas(); }
+        });
+        offcanvasBackdrop.addEventListener('click', closeOffcanvas);
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeOffcanvas));
       }
   
       // Parallax effect on scroll
